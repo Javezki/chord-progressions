@@ -2,7 +2,7 @@ public class Scale {
     
     private String[] modifiedScale;
     // This is the main scale pattern used to determine positions of keys played for chords
-    private String[] scalePattern = {
+    private static String[] scalePattern = {
         "C", "C#", "D","D#","E","F","F#","G","G#","A","A#","B"
     };
 
@@ -16,7 +16,7 @@ public class Scale {
     private String[] generateScale() {
         int keyPosition= 0;
         //Iterates through pattern to find the starting position of the scale
-        for (int i  = 0; i < 13; i++) {
+        for (int i  = 0; i < 12; i++) {
             if (scalePattern[i].equals(startingKey)) {
                 keyPosition = i;
                 break;
@@ -26,12 +26,14 @@ public class Scale {
         int i = 0; 
         String[] modifiedScale = new String[12];
         while (i != 12) {
-            if (keyPosition == 13) keyPosition = 0;
+            if (keyPosition == 12) keyPosition = 0;
 
             modifiedScale[i] = scalePattern[keyPosition];
 
+
             i++;
             keyPosition++;
+
         }
 
         return modifiedScale;
@@ -40,6 +42,11 @@ public class Scale {
     public String[] getModifiedScale() {
         return modifiedScale;
     }
+
+    public static String[] defaultScale() {
+        return scalePattern;
+    }
+
 
 
 
