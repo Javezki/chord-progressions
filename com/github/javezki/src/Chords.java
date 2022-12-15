@@ -24,16 +24,29 @@ public class Chords {
         fourthNote = new Note(notes[3], modifiedScaleStrings);
     }
 
-    public int distanceFromFirstAndSecondNote() {
+    private int distanceFromFirstAndSecondNote() {
         return (secondNote.getNotePosition() - firstNote.getNotePosition());
     };
 
-    public int distanceFromSecondAndThirdNote() {
+    private int distanceFromSecondAndThirdNote() {
         return (thirdNote.getNotePosition() - secondNote.getNotePosition());
     }
 
-    public int distanceFromThirdAndFourthNote() {
+    private int distanceFromThirdAndFourthNote() {
         return (fourthNote.getNotePosition() - thirdNote.getNotePosition());
+    }
+
+    public Progression getProgression() {
+        int firstDifference = distanceFromFirstAndSecondNote();
+        int secondDifference = distanceFromSecondAndThirdNote();
+        int thirdDifference = distanceFromThirdAndFourthNote();
+
+        if (firstDifference == 4 && secondDifference == 3 && thirdDifference == 3) return Progression.ROOT;
+        if (firstDifference == 3 && secondDifference == 3 && thirdDifference == 2) return Progression.FIRST;
+        if (firstDifference == 3 && secondDifference == 2 && thirdDifference == 4) return Progression.SECOND;
+        if (firstDifference == 2 && secondDifference == 4 && thirdDifference == 3) return Progression.THIRD;
+
+        return Progression.INVALID;
     }
 
 
