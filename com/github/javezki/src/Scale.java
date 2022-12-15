@@ -39,10 +39,18 @@ public class Scale {
         return modifiedScale;
     }
 
+    /**
+     * The modified scale with the first note at 0 of the string array
+     * @return The Modified Scale
+     */
     public String[] getModifiedScale() {
         return modifiedScale;
     }
 
+    /**
+     * This is the default scale pattern that goes from C to B 
+     * @return The Default Scale 
+     */
     public static String[] defaultScale() {
         return scalePattern;
     }
