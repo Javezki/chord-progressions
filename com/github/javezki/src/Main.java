@@ -22,7 +22,7 @@ public class Main {
 
             Chords chord = new Chords(splitStr);
 
-            results.add(chord.getProgression().name());
+            results.add(chord.getDomProgression().name());
         };
 
         //Print results
