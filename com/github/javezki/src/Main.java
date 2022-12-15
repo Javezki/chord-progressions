@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +9,7 @@ public class Main {
         int testCases = sc.nextInt();
         sc.nextLine();
 
-        ArrayList<String> results = new ArrayList<>();
+        String[] results = new String[testCases];
 
 
         //Get Chord Progressions
@@ -22,7 +21,7 @@ public class Main {
 
             Chords chord = new Chords(splitStr);
 
-            results.add(chord.getDomProgression().name());
+            results[i] = chord.getDomProgression().name();
         };
 
         //Print results
