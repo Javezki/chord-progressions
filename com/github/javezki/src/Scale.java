@@ -22,7 +22,7 @@ public class Scale {
                 break;
             }
         }
-        //Should iterate 12 times for a full scale pattern 
+        //Should iterate 11 times for a full scale pattern 
         int i = 0; 
         String[] modifiedScale = new String[12];
         while (i != 12) {
